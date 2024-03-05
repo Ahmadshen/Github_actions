@@ -12,22 +12,22 @@ jobs:
       uses: actions/checkout@v3
 
     - name: List project files and java version
-      run: |
+       run: |
           ls -ltr
           java -version
 
     - name: Check out Apache Tomcat
-        uses: actions/checkout@v3
-        with:
+      uses: actions/checkout@v3
+      with:
             repository: apache/tomcat # Repository name with owner
             ref: main               # The branch, tag or SHA to checkout
             path: ./tomcat            # Relative path under $GITHUB_WORKSPACE
 
     - name: Install Apache Ant
-        run: sudo apt-get install ant
+       run: sudo apt-get install ant
 
     - name: Compile Tomcat
-        run: |
+       run: |
             cd ./tomcat
             ant
 
@@ -39,14 +39,14 @@ jobs:
         architecture: x64         # (x64 or x86) - defaults to x64
 
     - name: List project files and java version
-      run: |
+       run: |
           ls -ltr
           java -version
 
     - name: Copy tomcat-users.xml into Tomcat configuration directory
-      run: cp -v tomcat-users.xml ./tomcat/conf/tomcat-users.xml
+       run: cp -v tomcat-users.xml ./tomcat/conf/tomcat-users.xml
 
     - name: Compile Tomcat
-      run: |
+       run: |
         cd ./tomcat
         ant
