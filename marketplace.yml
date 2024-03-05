@@ -1,0 +1,11 @@
+name: Python Application
+on :
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+      
