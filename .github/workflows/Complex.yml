@@ -9,27 +9,31 @@ jobs:
         steps:
             - name: Checkout
               uses: actions/checkout@v3
-            - name: Print Date
-              run: date.py
+            - name: Get current date
+              id: date
+              run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
     job2:
         runs-on: windows-latest
         steps:
             - name: Checkout
               uses: actions/checkout@v3
-            - name: Print Date
-              run: date.py
+            - name: Get current date
+              id: date
+              run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
     job3:
         runs-on: macos-latest
         steps:
             - name: Checkout
               uses: actions/checkout@v3
-            - name: Print Date
-              run: date.py
+            - name: Get current date
+              id: date
+              run: echo "::set-output name=date::$(date +'%Y-%m-%d')"y
     job4:
         needs: [job1, job2, job3]
         runs-on: ubuntu-latest
         steps:
             - name: Checkout
               uses: actions/checkout@v3
-            - name: Print Date
-              run: date.py                              
+            - name: Get current date
+              id: date
+              run: echo "::set-output name=date::$(date +'%Y-%m-%d')"                           
