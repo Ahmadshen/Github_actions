@@ -1,0 +1,18 @@
+name: Artifact Challenge
+on: [push]
+env: 
+    Filename: "artifact.txt"
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Checkout
+        uses: actions/checkout@v3
+        - name: Create artifact
+        run: echo "Hello, World!" > $Filename
+        - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+            name: $Filename
+            path: $Filename
+    ```
