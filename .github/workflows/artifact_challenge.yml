@@ -3,16 +3,17 @@ on: [push]
 env: 
     Filename: "artifact.txt"
 jobs:
-    build:
+   build:
+   name: Artifact Challenge
         runs-on: ubuntu-latest
         steps:
         - name: Checkout
-        uses: actions/checkout@v3
+          uses: actions/checkout@v3
         - name: Create artifact
-        run: echo "Hello, World!" > $Filename
+           run: echo "Hello, World!" > $Filename
         - name: Upload artifact
-        uses: actions/upload-artifact@v3
-        with:
+          uses: actions/upload-artifact@v3
+          with:
             name: $Filename
             path: $Filename
     ```
