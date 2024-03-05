@@ -2,8 +2,6 @@ name: Complex workflow
 #description: This workflow is a complex workflow that uses a number of different features of the workflow engine.
 on:
   push:
-    branches:
-      - master
 
 jobs:
     job1:
