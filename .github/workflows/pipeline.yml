@@ -17,4 +17,7 @@ jobs:
         steps:
            
         - uses: actions/checkout@v3
-        - uses: actions/artifact-upload-action@v2   
+        - uses: actions/artifact-upload-action@v2
+        with:
+          name: my-artifact
+          path: .   
